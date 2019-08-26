@@ -26,10 +26,13 @@ directory = args[1]
 new_width = int(args[2])
 new_height = int(args[3])
 
+delete_count = 0
 # Delete any previous _scaled.jpg files
 for i in glob.glob(directory+'\\*_scaled.jpg'):
     os.remove(i)
+    delete_count = delete_count + 1
 
+new_count = 0
 # Open directory, get image filepaths, resize images
 for filename in os.listdir(directory):
     
@@ -40,5 +43,8 @@ for filename in os.listdir(directory):
     picture = Image.open(picture_filepath)
     picture = picture.resize((new_width, new_height),Image.ANTIALIAS)
     picture.save((picture_filepath+"_scaled.jpg"), optimize = True, quality = 100)
+    new_count = new_count + 1
 
-
+print("\nImage Conversion complete.")
+print(delete_count, "old copies deleted.")
+print(new_count, "new pictures created.")
