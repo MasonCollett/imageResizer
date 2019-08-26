@@ -26,25 +26,38 @@ directory = args[1]
 new_width = int(args[2])
 new_height = int(args[3])
 
-delete_count = 0
 # Delete any previous _scaled.jpg files
+delete_count = 0
 for i in glob.glob(directory+'\\*_scaled.jpg'):
     os.remove(i)
     delete_count = delete_count + 1
 
-new_count = 0
 # Open directory, get image filepaths, resize images
+new_count = 0
+original_filesize = 0
+new_filesize = 0
 for filename in os.listdir(directory):
     
     # Get picture filepaths
     picture_filepath = (directory+ "\\" + filename)
+    original_filesize = original_filesize + os.path.getsize(picture_filepath)
 
     # Resize images
     picture = Image.open(picture_filepath)
     picture = picture.resize((new_width, new_height),Image.ANTIALIAS)
-    picture.save((picture_filepath+"_scaled.jpg"), optimize = True, quality = 100)
+    picture.save((picture_filepath+"_scaled.jpg"), quality = 100)
+    new_filepath = picture_filepath+"_scaled.jpg"
+    new_filesize = new_filesize + os.path.getsize(new_filepath)
     new_count = new_count + 1
 
-print("\nImage Conversion complete.")
+print("\nImage conversion complete.")
 print(delete_count, "old copies deleted.")
-print(new_count, "new pictures created.")
+print(new_count, "new pictures created.\n")
+
+print("Original pictures storage space:",original_filesize, "bytes")
+print("Resized pictures storage space:\t",new_filesize, "bytes\n")
+
+print("File size reduced by: ", str(round(100 - ((new_filesize/original_filesize)*100), 2)), "%")
+
+
+
