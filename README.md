@@ -1,13 +1,13 @@
 ## ImageConverter v1.0
----------------------------------------------
+
 
 ## Description
----------------
+
 image_converter.py is a Python script that will resize a picture to a given size, greatly reducing file size.
 
 
 ## Installation
----------------
+
 These steps will only need to be performed if this is the first time a python script is being run on the computer:
 	1. Go to: https://www.python.org/downloads/windows/
 	2. Download "Windows x86-64 executable installer".
