@@ -20,7 +20,7 @@ This step will only need to be performed the first time running image_converter.
 
 
 ## Usage 
---------------
+
 Script requires 3 arguments to be run:
 	1. Path to your python.exe file.
 		This is usually found in C:\Python37\python.exe
@@ -45,13 +45,13 @@ Special notes:
 
 
 ## Example Call
---------------															
+														
 C:\Python\Python37\python.exe C:\Users\mason.collett\Python\ImageConverter\image_converter.py C:\Users\mason.collett\LabPictures 150 100
 
 ^filepath to python.exe       ^filepath to image_converter.py			              ^filepath to directory of pictures to change	^ ^ new width, new height
 
 
 ## Support
---------------
+
 Contact: Mason Collett
 email: mason.collett@a-dec.com
