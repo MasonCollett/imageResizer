@@ -35,6 +35,9 @@ new_count = 0
 original_filesize = 0
 new_filesize = 0
 
+print("\n======================================================================\n")
+print("Resizing starting...\n")
+
 # Open directory, get image filepaths, resize images
 for filename in os.listdir(directory):
     
@@ -45,16 +48,17 @@ for filename in os.listdir(directory):
     # Resize images
     picture = Image.open(picture_filepath)
     picture = picture.resize((new_width, new_height),Image.ANTIALIAS)
+    picture = picture.convert('RGB')
     picture.save((new_directory+filename+"_resized.jpg"), quality = 100)
 
     # Get new picture storage space
     new_filepath = new_directory+filename+"_resized.jpg"
     new_filesize = new_filesize + os.path.getsize(new_filepath)
     new_count = new_count + 1
+    print("Images resized:",new_count)
 
-print("\n======================================================================")
 
-print("Image conversion complete!")
+print("\nImage conversion complete!")
 print(new_count, "new pictures created.\n")
 
 print("Original pictures storage space:",original_filesize, "bytes")
