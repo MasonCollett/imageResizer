@@ -38,6 +38,8 @@ new_filesize = 0
 print("\n======================================================================\n")
 print("Resizing starting...\n")
 
+total_files = str(len(os.listdir(directory)))
+
 # Open directory, get image filepaths, resize images
 for filename in os.listdir(directory):
     
@@ -55,7 +57,10 @@ for filename in os.listdir(directory):
     new_filepath = new_directory+filename+"_resized.jpg"
     new_filesize = new_filesize + os.path.getsize(new_filepath)
     new_count = new_count + 1
-    print("Images resized:",new_count)
+    sys.stdout.write("\rImages Resized: ")
+    sys.stdout.write(str(new_count))
+    sys.stdout.write("/")
+    sys.stdout.write(total_files)
 
 
 print("\nImage conversion complete!")
@@ -66,7 +71,8 @@ print("Resized pictures storage space:\t",new_filesize, "bytes\n")
 
 print("File size reduced by: ", str(round(100 - ((new_filesize/original_filesize)*100), 2)), "%")
 
-print("======================================================================")
+print("\n======================================================================")
+
 
 
 
