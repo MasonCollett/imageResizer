@@ -23,8 +23,18 @@ from PIL import Image
 # Get Command line arguments
 args = sys.argv
 directory = args[1]
-new_width = int(args[2])
-new_height = int(args[3])
+
+# Setup whether it's set or scaled resizing
+if(len(args) == 4):
+    new_width = int(args[2])
+    new_height = int(args[3])
+    setup = "fixed"
+
+elif(len(args) == 3):
+    scale = float(args[2])
+    og_width = 0
+    og_height = 0
+    setup = "scaled"   
 
 # Create new directory
 os.makedirs(directory+"_Resized\\", exist_ok = True)
@@ -34,11 +44,14 @@ new_directory = directory + "_Resized\\"
 new_count = 0
 original_filesize = 0
 new_filesize = 0
-
-print("\n======================================================================\n")
-print("Resizing starting...\n")
-
 total_files = str(len(os.listdir(directory)))
+
+# Print statements for user readability
+print("\n======================================================================\n")
+sys.stdout.write("Resizing starting, using ")
+sys.stdout.write("\"")
+sys.stdout.write(setup)
+sys.stdout.write("\" setup...\n\n")
 
 # Open directory, get image filepaths, resize images
 for filename in os.listdir(directory):
@@ -47,9 +60,19 @@ for filename in os.listdir(directory):
     picture_filepath = (directory+ "\\" + filename)
     original_filesize = original_filesize + os.path.getsize(picture_filepath)
 
-    # Resize images
+    # Open image
     picture = Image.open(picture_filepath)
+
+    # If scaled resizing, set new lengths and heights
+    if(setup == "scaled"):
+        og_width, og_height = picture.size
+        new_width = round(og_width * (scale/100))
+        new_height = round(og_height * (scale/100))
+    
+    # Resize picture
     picture = picture.resize((new_width, new_height),Image.ANTIALIAS)
+
+    # Convert to rgb then jpg and save
     picture = picture.convert('RGB')
     picture.save((new_directory+filename+"_resized.jpg"), quality = 100)
 
@@ -72,10 +95,6 @@ print("Resized pictures storage space:\t",new_filesize, "bytes\n")
 print("File size reduced by: ", str(round(100 - ((new_filesize/original_filesize)*100), 2)), "%")
 
 print("\n======================================================================")
-
-
-
-
 
 
     
