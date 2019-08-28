@@ -20,6 +20,8 @@ import os
 import glob
 from PIL import Image
 
+print("\n======================================================================\n")
+
 # Get Command line arguments
 args = sys.argv
 directory = args[1]
@@ -32,9 +34,12 @@ if(len(args) == 4):
 
 elif(len(args) == 3):
     scale = float(args[2])
+    while (scale > 200):
+        scale = float(input("Error: Percentage too high. Please enter a new percentage: "))
+
     og_width = 0
     og_height = 0
-    setup = "scaled"   
+    setup = "percentage"  
 
 # Create new directory
 os.makedirs(directory+"_Resized\\", exist_ok = True)
@@ -47,8 +52,7 @@ new_filesize = 0
 total_files = str(len(os.listdir(directory)))
 
 # Print statements for user readability
-print("\n======================================================================\n")
-sys.stdout.write("Resizing starting, using ")
+sys.stdout.write("\nResizing starting, using ")
 sys.stdout.write("\"")
 sys.stdout.write(setup)
 sys.stdout.write("\" setup...\n\n")
@@ -64,7 +68,7 @@ for filename in os.listdir(directory):
     picture = Image.open(picture_filepath)
 
     # If scaled resizing, set new lengths and heights
-    if(setup == "scaled"):
+    if(setup == "percentage"):
         og_width, og_height = picture.size
         new_width = round(og_width * (scale/100))
         new_height = round(og_height * (scale/100))
@@ -95,6 +99,13 @@ print("Resized pictures storage space:\t",new_filesize, "bytes\n")
 print("File size reduced by: ", str(round(100 - ((new_filesize/original_filesize)*100), 2)), "%")
 
 print("\n======================================================================")
+
+
+
+
+
+
+
 
 
     
