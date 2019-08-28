@@ -1,4 +1,4 @@
-## ImageResizerv1.5
+## ImageResizer v1.5.1
 ------------------------------
 
 ## Description
@@ -13,7 +13,7 @@ All dependencies should be installed already.
 
 ## Usage 
 --------------
-Command Prompt requires 4 or 5 arguments to run the script.
+There are two ways to run this program in Command Prompt, using either 4 or 5 arguments based on preference/need.
 
 Using 5 arguments, i.e the "Fixed" Method:
 	1. Path to python.exe file.
@@ -21,27 +21,31 @@ Using 5 arguments, i.e the "Fixed" Method:
 	3. Path to directory where images to be resized are.
 	4. New desired width of pictures.
 		-Needs to be a whole number greater than zero.
+		-Capped at 10000
 	5. New desired height of pictures.
 		-Needs to be a whole number greater than zero.
+		-Capped at 10000
 
 Using 4 arguments, i.e the "Percentage" Method:
 	1. Path to python.exe file.
 	2. Path to where image_resizer.py is stored.
 	3. Path to directory where images to be resized are.
-	4. Percentage of the original pictures the new pictures should be.
-		-Any number greater than zero.
+	4. Percentage size of the original pictures the new pictures should be.
+		-Can be any number greater than zero.
+		-Numbers greater than 100 will create larger files.  Size increased is capped at 200%.
 
 Output: 
 	- A new directory containing resized copies of all of the pictures from the pictures directory.
-	- New directory will be in the same directory as the original pictures directory.
+	- New directory will be in the same directory as the original pictures directory with "_Resized" added on.
 	- New pictures will contain identical filenames with "_resized.jpg" added on.
 	- Program status will be printed to console.
 	- Additional statistical information will be printed to the console.
 
 Special notes:
-	- Only the pictures can be in the picture directory.  
+	- Only the pictures to be resized can be in the picture directory.  
 	- If there is already a _Resized directory made from the pictures directory, it will be overwritten.
 	- For best results, it is recommended to see what ratio the pictures are and to resize them in the same ratio.
+	- If the photos to be resized contain different width to height ratios, it's recommended to use Percentage.
 
 
 ## Example Calls
@@ -71,4 +75,3 @@ Percentage Resize Call:
 --------------
 Contact: Mason Collett
 Email: mason.collett@a-dec.com
-
