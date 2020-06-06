@@ -74,4 +74,4 @@ Percentage Resize Call:
 ## Support
 --------------
 Contact: Mason Collett
-Email: mason.collett@a-dec.com
+
