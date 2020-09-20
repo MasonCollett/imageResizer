@@ -3,13 +3,7 @@ ImageResizer
 
 Description
 ---------------
-imageResizer.py is a Python script that will resize a picture to a given size, greatly reducing storage space.
-
-
-Installation
----------------
-All dependencies should be installed already.  
-
+imageResizer.py is a Python script that will resize a picture to a given size, greatly reducing storage space. 
 
 Usage 
 --------------
