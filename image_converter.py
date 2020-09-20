@@ -1,16 +1,11 @@
 #!/local/cluster/bin/python3
 ######################################################################################
 #   ==  image_converter.py  ==
-#   Mason Collett - mason.collett@a-dec.com 
+#   Mason Collett
 # 
 #   Function: Script that converts a directory of photos into the desired size
 # 
-#   When calling the script:
-#       First argument needs to be a filepath to the directory of photos
-#         > Nothing else can be in the directory but the photos to be modified 
-#       Second argument needs to be the new width
-#       Third argument needs to be the new height
-#       Camera defaults to a 1.5 : 1 setting, so ideally leave images in that ratio
+#   See README for usage
 #
 #####################################################################################
 
