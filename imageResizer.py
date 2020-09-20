@@ -1,6 +1,6 @@
 #!/local/cluster/bin/python3
 ######################################################################################
-#   ==  image_converter.py  ==
+#   ==  imageResizer.py  ==
 #   Mason Collett
 # 
 #   Function: Script that converts a directory of photos into the desired size
