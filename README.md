@@ -3,7 +3,7 @@ ImageResizer
 
 Description
 ---------------
-image_resizer.py is a Python script that will resize a picture to a given size, greatly reducing storage space.
+imageResizer.py is a Python script that will resize a picture to a given size, greatly reducing storage space.
 
 
 Installation
@@ -18,7 +18,7 @@ There are two ways to run this program in Command Prompt, using either 4 or 5 ar
 Using 5 arguments, i.e the "Fixed" Method:
 
 	1. Path to python.exe file.
-	2. Path to where image_resizer.py is stored.
+	2. Path to where imageResizer.py is stored.
 	3. Path to directory where images to be resized are.
 	4. New desired width of pictures.
 		-Needs to be a whole number greater than zero.
@@ -30,7 +30,7 @@ Using 5 arguments, i.e the "Fixed" Method:
 Using 4 arguments, i.e the "Percentage" Method:
 
 	1. Path to python.exe file.
-	2. Path to where image_resizer.py is stored.
+	2. Path to where imageResizer.py is stored.
 	3. Path to directory where images to be resized are.
 	4. Percentage size of the original pictures the new pictures should be.
 		-Can be any number greater than zero.
