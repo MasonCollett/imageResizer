@@ -57,7 +57,7 @@ Example Calls
 
 Fixed Resize Call: 
 														
-"S:\Materials Laboratory\TESTS IN PROGRESS\MasonsScripts\Python\Python37\python.exe" "S:\Materials Laboratory\TESTS IN PROGRESS\MasonsScripts\ImageResizer\image_resizer.py" "S:\Materials Laboratory\TESTS IN PROGRESS\MasonsScripts\ImageResizer\LabPictures" 300 200
+"C:\Python\Python37\python.exe" "C:\ImageResizer\image_resizer.py" "C:\Images\ResizeMe" 300 200
 
 	Outline: [python path] [script path] [picture directory path] [width] [height]
 
@@ -67,7 +67,7 @@ Fixed Resize Call:
 
 Percentage Resize Call: 
 
-"S:\Materials Laboratory\TESTS IN PROGRESS\MasonsScripts\Python\Python37\python.exe" "S:\Materials Laboratory\TESTS IN PROGRESS\MasonsScripts\ImageResizer\image_resizer.py" "S:\Materials Laboratory\TESTS IN PROGRESS\MasonsScripts\ImageResizer\LabPictures" 50
+"C:\Python\Python37\python.exe" "C:\ImageResizer\image_resizer.py" "C:\Images\ResizeMe" 50
 
 	Outline: [python path] [script path] [picture directory path] [percentage]
 	
