@@ -1,4 +1,4 @@
-ImageResizer v1.5.1
+ImageResizer
 ------------------------------
 
 Description
