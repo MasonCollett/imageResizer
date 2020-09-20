@@ -16,6 +16,7 @@ Usage
 There are two ways to run this program in Command Prompt, using either 4 or 5 arguments based on preference/need.
 
 Using 5 arguments, i.e the "Fixed" Method:
+
 	1. Path to python.exe file.
 	2. Path to where image_resizer.py is stored.
 	3. Path to directory where images to be resized are.
@@ -27,6 +28,7 @@ Using 5 arguments, i.e the "Fixed" Method:
 		-Capped at 10000
 
 Using 4 arguments, i.e the "Percentage" Method:
+
 	1. Path to python.exe file.
 	2. Path to where image_resizer.py is stored.
 	3. Path to directory where images to be resized are.
@@ -35,6 +37,7 @@ Using 4 arguments, i.e the "Percentage" Method:
 		-Numbers greater than 100 will create larger files.  Size increased is capped at 200%.
 
 Output: 
+
 	- A new directory containing resized copies of all of the pictures from the pictures directory.
 	- New directory will be in the same directory as the original pictures directory with "_Resized" added on.
 	- New pictures will contain identical filenames with "_resized.jpg" added on.
@@ -42,6 +45,7 @@ Output:
 	- Additional statistical information will be printed to the console.
 
 Special notes:
+
 	- Only the pictures to be resized can be in the picture directory.  
 	- If there is already a _Resized directory made from the pictures directory, it will be overwritten.
 	- For best results, it is recommended to see what ratio the pictures are and to resize them in the same ratio.
